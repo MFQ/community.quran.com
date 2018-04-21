@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227011435) do
+ActiveRecord::Schema.define(version: 20180420185143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,15 +56,11 @@ ActiveRecord::Schema.define(version: 20180227011435) do
     t.index ["unlock_token"], name: "index_admin_users_on_unlock_token", unique: true
   end
 
-  create_table "arabic_transliterations", force: :cascade do |t|
-    t.bigint "word_id"
-    t.bigint "verse_id"
-    t.string "text"
-    t.string "indopak_text"
+  create_table "comments", force: :cascade do |t|
+    t.text "message"
+    t.integer "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["verse_id"], name: "index_arabic_transliterations_on_verse_id"
-    t.index ["word_id"], name: "index_arabic_transliterations_on_word_id"
   end
 
   create_table "pause_marks", id: :serial, force: :cascade do |t|

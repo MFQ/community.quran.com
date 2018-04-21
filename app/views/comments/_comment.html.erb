@@ -1,0 +1,7 @@
+<div class="row" style="border-bottom: 1px solid black;">
+  <p style="padding-left: 5%;"> <%= comment.message %>
+  <p>
+  <p class="pull-right" style="padding-right: 5%;">
+    Posted: <%= time_ago_in_words(comment.created_at) %> ago
+  <p>
+</div>
