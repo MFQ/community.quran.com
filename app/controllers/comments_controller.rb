@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def fetch_by_word
-    @comments = Comment.where(:word_id => params[:id]).order('created_at desc')
+    @comments = Comment.where(word_id: params[:id]).order('created_at desc')
   end
 
   def create
